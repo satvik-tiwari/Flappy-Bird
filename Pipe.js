@@ -7,7 +7,7 @@ class Pipe
     this.contact = false;
     //this.up = random(height/2);
     //this.bottom = random(height/2)
-    this.minSpace = 100;
+    this.minSpace = 150;
 
     this.minBoundary = 38 + 10; //length of broad part of pipe + min length of pipe
     this.up = random(this.minBoundary, height - this.minSpace - this.minBoundary);
@@ -31,15 +31,7 @@ class Pipe
 
   show()
   {
-   //  if(this.contact)
-   //    fill(200,255,255);
-   //  else
-   //    fill(90, 255, 255);
-   //  stroke(0);
-   //
-   //
-   // rect(this.x, 0, this.width, this.up);
-   //  rect(this.x, this.bottom, this.width, height - this.bottom - 11);
+     
     push();
     translate(this.x + 94 , this.up);
     rotate(PI);
@@ -52,7 +44,18 @@ class Pipe
 
     pop();
     //pipe.mask(platformImg);
-    image(pipe, this.x, this.bottom);
+      image(pipe, this.x, this.bottom);
+
+
+      if (this.contact)
+          fill(0, 255, 255, 150);
+      else
+          fill(90, 255, 255, 150);
+      stroke(0);
+
+
+      //rect(this.x, 0, this.width, this.up);
+      //rect(this.x, this.bottom, this.width, height - this.bottom - 11);
     //console.log(height);
   //  rect(this.x, 0, this.width, this.up);
     //rect(this.x, this.bottom, this.width, height - this.bottom - 11);
@@ -65,7 +68,7 @@ class Pipe
     //cons
     //horizontalCollision = B.x+B.r > this.x && B.x+B.r < this.x+this.width;
     //verticalCollision = B.y+B.r > this.bottom && B.y+B.r < this.up-this.minSpace;
-    if((B.x+B.r > this.x && B.x-B.r < this.x+this.width) &&
+    if((B.x+B.r > this.x && B.x-5*B.r < this.x+this.width) &&
    (B.y+B.r > this.bottom || B.y+B.r < this.up-this.minSpace))
     //if((B.x > this.x && B.x < this.x+this.width) &&
       //(B.y > this.bottom || B.y < this.up-this.minSpace))

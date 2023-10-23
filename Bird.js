@@ -10,9 +10,11 @@ class Bird
     this.airResistance = 0.4;
     this.upForce = -18;
     this.upwardMovement = false;
-    this.rotation = PI/12;
+    this.rotation = PI / 12;
+      this.xOff = 18; 
+      this.yOff = 12; 
 
-  }
+  } 
 
   update()
   {
@@ -30,8 +32,8 @@ class Bird
     //stroke(0);
     //fill(50, 255, 255);
     //ellipse(this.x, this.y, this.r, this.r);
-
-    if(this.upwardMovement)
+      
+    /*if(this.upwardMovement)
     {
       push();
       translate(this.x, this.y);
@@ -47,10 +49,14 @@ class Bird
       rotate(this.rotation);
       image(bird, 0, 0);
       pop();
-    }
+     }*/
+
+    stroke(0);
+    fill(50, 255, 255, 100);
+    //ellipse(this.x, this.y, this.r, this.r);
 
   //  ellipse(this.x, this.y, this.r, this.r);
-    //image(bird, this.x, this.y);
+    image(bird, this.x - this.xOff, this.y - this.yOff);
   }
 
   jump()
@@ -66,17 +72,19 @@ class Bird
 
   edges()
   {
-    if(this.y > height)
+    if(this.y > height - 20)
     {
-      this.y = height;
+      this.y = height - 20;
       this.velocity = 0;
     }
 
     else if (this.y < 0)
     {
-      this.y = 0;
+        this.y = 0;
       this.velocity = 0;
     }
+
+
   }
 
 }

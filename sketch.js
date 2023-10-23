@@ -14,7 +14,7 @@ function preload()
   bird = loadImage("Images/Bird.png");
   back = loadImage("Images/Background.jpg");
   platformImg = loadImage("Images/Background line.png");
-  pipe = loadImage("Images/pipe.png");
+  pipe = loadImage("Images/Pipe.png");
 //  pipeCeiling = loadImage("Images/pipeCeiling.png");
 }
 
@@ -44,7 +44,7 @@ function draw()
       P.splice(i,1);
     P[i].collides(B)
      if(P[i].collides(B))
-     //noLoop();
+      noLoop();
 
        console.log('HIT');
       //background(150, 255, 255);
